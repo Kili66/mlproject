@@ -23,7 +23,7 @@ from dataclasses import dataclass
 # DataIngestion Config provides input
 @dataclass   # allows us to define the class variable
 class DataIngestionConfig:
-    # inputs that we give to the data ingestion component and the data ingestion component save the output files to artifact folder
+    # configure inputs that we give to the data ingestion component and the data ingestion component save the output files to artifact folder
     train_data_path: str = os.path.join('artifact', "train.csv")
     test_data_path: str = os.path.join('artifact', "test.csv")
     raw_data_path: str = os.path.join('artifact', "data.csv")

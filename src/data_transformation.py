@@ -9,6 +9,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from exception import CustomException  #import exception for exeception Handling
 from logger import logging
+import dill
 from utils import save_object
 
 @dataclass  #directly define variables and their data types in a class.
