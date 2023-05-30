@@ -34,16 +34,17 @@ class ModelTrainer:
                 test_array[:,-1], ##the last col for y_test
             )
             models= {
-                "Random Forest": RandomForestRegressor(),
-                "Gradient Boosting": DecisionTreeRegressor(),
-                "Gradien Boosting": GradientBoostingRegressor(),
+                "Random Forest": RandomForestRegressor(max_depth=2, random_state=0),
+                "Gradient Boosting": DecisionTreeRegressor(random_state=42),
+                "Gradien Boosting": GradientBoostingRegressor(random_state=42),
                 "Linear Regression": LinearRegression(),
-                "KNN": KNeighborsRegressor(),
-                "CatBoosting": CatBoostRegressor(),
-                "XGB": XGBRegressor(),
-                "Adaboost calssifier": AdaBoostRegressor(), 
+                "KNN": KNeighborsRegressor(n_neighbors=2),
+                "CatBoosting": CatBoostRegressor(depth=10),
+                "XGB": XGBRegressor(n_estimators=100),
+                "Adaboost calssifier": AdaBoostRegressor(random_state=0, n_estimators=100), 
             }
             #Hyper paramter Tuning
+            '''
             params= {
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -81,7 +82,9 @@ class ModelTrainer:
                 }
                 
             }
-            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models, param=params)
+            
+            '''
+            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,models=models)
             
             #to get the best model score from dict
             best_model_score= max(sorted(model_report.values()))
