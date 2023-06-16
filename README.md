@@ -20,11 +20,13 @@ The dataset used for this project is from Kaggle: https://www.kaggle.com/dataset
 ## Technologies Used
 The following technologies were used in this project: 
 
-Python: Programming language used for data preprocessing, model training, and evaluation.
-scikit-learn: Machine learning library used for building and evaluating predictive models.
-pandas: Library for data manipulation and analysis.
-Jupyter Notebook: Interactive environment used for prototyping and development.
-Visual Code: all the .py codes are executed there inside our environment created
+* Python: Programming language used for data preprocessing, model training, and evaluation.
+* scikit-learn: Machine learning library used for building and evaluating predictive models.
+* pandas: Library for data manipulation and analysis.
+* Jupyter Notebook: Interactive environment used for prototyping and development.
+* Visual Code: all the .py codes are executed there inside our environment created
+* docker to create image container and push it to docker hub repository
+* github action: Here we use github workflow CI/CD Pipeline
 
 ## Usage
 To use this project, follow the steps below:
@@ -47,3 +49,8 @@ random forests Regressor
 -  The dataset is preprocessed by handling missing values, encoding categorical variables, and performing feature scaling if required.
 ## Evaluation
 The performance of the trained models is evaluated using appropriate evaluation metrics such as MSE, MAE, r2 square, RMSE
+## Model Deployment
+* Docker
+* Github Action CI/CD pipeline
+* ECR of AWS
+* EC2 of AWS
